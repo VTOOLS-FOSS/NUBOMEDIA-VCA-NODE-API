@@ -1,0 +1,120 @@
+{
+  "name": "nubotracker",
+  "version": "0.0.5",
+  "kurentoVersion": "^6.0.0",
+  "imports": [
+    {
+      "name": "core",
+      "version": "^6.0.0",
+      "mavenVersion": "[6.0.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.0.0 <7.0.0"
+    },
+    {
+      "name": "elements",
+      "version": "^6.0.0",
+      "mavenVersion": "[6.0.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.0.0 <7.0.0"
+    },
+    {
+      "name": "filters",
+      "version": "^6.0.0",
+      "mavenVersion": "[6.0.0,7.0.0-SNAPSHOT)",
+      "npmVersion": ">=6.0.0 <7.0.0"
+    }
+  ],
+  "code": {
+    "api": {
+      "js": {
+        "nodeName": "kurento-module-nubotracker",
+        "npmDescription": "",
+        "npmVersion": "0.0.5"
+      },
+      "java": {
+        "mavenGroupId": "org.kurento.module",
+        "packageName": "org.kurento.module.nubotracker",
+        "mavenArtifactId": "nubotracker",
+        "mavenVersion": "0.0.5"
+      }
+    },
+    "implementation": {
+      "lib": "libkmsnubotracker",
+      "cppNamespace": "kurento::module::nubotracker"
+    }
+  },
+  "remoteClasses": [
+    {
+      "name": "NuboTracker",
+      "doc": "NuboTracker interface. Documentation about the module",
+      "extends": "Filter",
+      "constructor": {
+        "params": [
+          {
+            "name": "mediaPipeline",
+            "doc": "the parent :rom:cls:`MediaPipeline`",
+            "type": "MediaPipeline"
+          }
+        ],
+        "doc": "Create an element"
+      },
+      "methods": [
+        {
+          "params": [
+            {
+              "name": "threshold",
+              "doc": "Set the threshold",
+              "type": "int"
+            }
+          ],
+          "name": "setThreshold",
+          "doc": "Minimum diferece among pixels  to detect motion"
+        },
+        {
+          "params": [
+            {
+              "name": "minArea",
+              "doc": "the minimum area of the object",
+              "type": "int"
+            }
+          ],
+          "name": "setMinArea",
+          "doc": "Set up the Minimun area of the object"
+        },
+        {
+          "params": [
+            {
+              "name": "maxArea",
+              "doc": "the maximum area of the object",
+              "type": "float"
+            }
+          ],
+          "name": "setMaxArea",
+          "doc": "Set up the Maximum area of the object"
+        },
+        {
+          "params": [
+            {
+              "name": "distance",
+              "doc": "the maximum area of the object",
+              "type": "int"
+            }
+          ],
+          "name": "setDistance",
+          "doc": "Set up the Maximum area of the object"
+        },
+        {
+          "params": [
+            {
+              "name": "mode",
+              "doc": "0 => normal video; 1=>normal video + object trackerd; 2=> diff images + object tracked; 3=> motion histagram + object tracked",
+              "type": "int"
+            }
+          ],
+          "name": "setVisualMode",
+          "doc": "Set up the visual Mode of the output video"
+        }
+      ]
+    }
+  ],
+  "complexTypes": [],
+  "events": []
+}
